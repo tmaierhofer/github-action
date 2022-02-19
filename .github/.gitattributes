@@ -1,0 +1,18 @@
+# Text is 
+* text=auto
+
+# Native handling
+*.c text
+*.h text
+*.cpp text
+*.hpp text
+*.cmake text
+*.json text
+
+# Linux Handling
+Dockerfile  eol=lf
+*.sh text eol=lf
+
+# Binary Files
+*.png binary
+*.jpg binary
