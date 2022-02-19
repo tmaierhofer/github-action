@@ -1,0 +1,35 @@
+:icons: font
+:numbered:
+:title: TMC GitHub Actions
+
+= Github Actions 
+
+
+
+
+
+== Development Environment Setup
+
+* Install Docker on the Windows / Linux development machine
+
+* Install Visual Studio Code
+
+* Install the recommended extensions, espaecally the Remote-Containers extension + 
+  https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
+
+
+=== Visual Studio Code Configuration
+
+**No need to do manual steps!** + 
+Visual Studio Code is preconfigured. 
+
+==== Preconfigured Components / Settings Reference
+
+===== Docker In Docker Settings for VSCode
+
+https://github.com/microsoft/vscode-dev-containers/tree/main/containers/docker-from-docker
+
+===== Used Scripts
+https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/common-debian.sh
+https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docker-debian.sh
+
