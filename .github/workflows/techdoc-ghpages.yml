@@ -18,11 +18,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@latest
+    - uses: actions/checkout@HEAD
       
     # Includes the TechDoc GitHub Pages Action to convert the documentation to html and publish to gh-pages branch
     - name: techdoc-ghpages
-      uses: tmaierhofer/github-action@latest
+      uses: tmaierhofer/github-action@HEAD
       with:
         asciidoctor_params: --attribute=nofooter
         pdf_build: true
