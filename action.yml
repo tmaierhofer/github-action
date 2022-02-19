@@ -1,17 +1,17 @@
-name: asciidoctor-ghpages
-author: Manoel Campos da Silva Filho
+name: techdoc-ghpages
+author: Thomas Maierhofer - Thomas Maierhofer Consulting
 branding:
   icon: book-open
   color: blue
-description: 'Build AsciiDoc GitHub Pages: renames resulting README.html to index.html. Generates an ebook.pdf or Reveal.js slides'
+description: 'Build Documentation and publish it on GitHub Pages: renames resulting README.html to index.html. Generates an ebook.pdf or Reveal.js slides'
 
 inputs:
   source_dir:
-    description: 'Defines the source root directory from where AsciiDoc files will be built and other containing files will be published to gh-pages.'
-    default: '.'
+    description: 'Defines the source root directory from where the Documentation will be built.'
+    default: './docs'
     required: false
   asciidoctor_params:
-    description: 'Extra parameters to pass to the asciidoctor command to customize the process of building adoc files'
+    description: 'Extra parameters to pass to the asciidoctor command to customize the process of building the adoc files'
     required: false
   adoc_file_ext:
     description: 'The extension you are using for your AsciiDoc Files'

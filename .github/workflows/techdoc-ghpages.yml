@@ -1,4 +1,4 @@
-name: asciidoctor-ghpages
+name: techdoc-ghpages
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -20,9 +20,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       
-    # Includes the AsciiDoctor GitHub Pages Action to convert adoc files to html and publish to gh-pages branch
-    - name: asciidoctor-ghpages
-      uses: manoelcampos/asciidoctor-ghpages-action@v2
+    # Includes the TechDoc GitHub Pages Action to convert the documentation to html and publish to gh-pages branch
+    - name: techdoc-ghpages
+      uses: tmaierhofer/github-action
       with:
         asciidoctor_params: --attribute=nofooter
         pdf_build: true

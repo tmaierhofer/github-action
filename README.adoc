@@ -1,12 +1,8 @@
 :icons: font
 :numbered:
-:title: TMC GitHub Actions
+:title: TechDoc GitHub Action
 
-= Github Actions 
-
-
-
-
+= TechDoc GitHub Action
 
 == Development Environment Setup
 
