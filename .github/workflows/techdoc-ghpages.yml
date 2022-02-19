@@ -22,7 +22,7 @@ jobs:
       
     # Includes the TechDoc GitHub Pages Action to convert the documentation to html and publish to gh-pages branch
     - name: techdoc-ghpages
-      uses: tmaierhofer/github-action
+      uses: tmaierhofer/github-action@v2
       with:
         asciidoctor_params: --attribute=nofooter
         pdf_build: true
