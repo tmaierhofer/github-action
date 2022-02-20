@@ -4,6 +4,13 @@
 
 = TechDoc GitHub Action
 
+== Development Workflows
+
+=== Local Testing With Act
+https://github.com/nektos/act
+
+
+
 == Development Environment Setup
 
 * Install Docker on the Windows / Linux development machine
@@ -12,7 +19,6 @@
 
 * Install the recommended extensions, espaecally the Remote-Containers extension + 
   https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
-
 
 === Visual Studio Code Configuration
 
@@ -25,7 +31,10 @@ Visual Studio Code is preconfigured.
 
 https://github.com/microsoft/vscode-dev-containers/tree/main/containers/docker-from-docker
 
-===== Used Scripts
+===== Docker In Docker - Used Scripts
 https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/common-debian.sh
 https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docker-debian.sh
+
+===== Act
+https://github.com/nektos/act
 

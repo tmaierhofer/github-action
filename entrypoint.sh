@@ -121,4 +121,4 @@ fi
 echo "Pushing changes back to the remote repository"
 git push -f --set-upstream origin gh-pages
 
-echo "FINISH!"
+echo "FINISH"
