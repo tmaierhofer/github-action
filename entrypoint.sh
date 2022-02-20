@@ -53,7 +53,7 @@ eval "$INPUT_PRE_BUILD"
 # AsciiDoctor Documentation Generation Step
 # ----------------------------------------------------------------------------
 
-GENERAL_ASCIIDOCTOR_PARAMS = --attribute=nofooter -a allow-uri-read -r asciidoctor-diagram -r asciidoctor-kroki
+set GENERAL_ASCIIDOCTOR_PARAMS="--attribute=nofooter -a allow-uri-read -r asciidoctor-diagram -r asciidoctor-kroki"
 
 if [[ $INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD == false ]]; then 
     echo "Converting AsciiDoc files to HTML"
