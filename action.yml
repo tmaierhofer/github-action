@@ -3,7 +3,7 @@ author: Thomas Maierhofer - Thomas Maierhofer Consulting
 branding:
   icon: book-open
   color: blue
-description: 'Build Documentation and publish it on GitHub Pages: renames resulting README.html to index.html. Generates an ebook.pdf or Reveal.js slides'
+description: 'Build Documentation and publish it on GitHub Pages: renames resulting README.html to index.html. Generates an tech-doc.pdf'
 
 inputs:
   source_dir:
@@ -18,19 +18,11 @@ inputs:
     default: '.adoc'
     required: false
   pdf_build:
-    description: 'Defines if a PDF ebook should be built along with the html files. That will generate an ebook.pdf file inside the gh-pages branch.'
+    description: 'Defines if a PDF ebook should be built along with the html files. That will generate an tech-doc.pdf file.'
     default: 'false'
     required: false
   ebook_main_adoc_file:
     description: 'Defines the name of the main AsciiDoc file that will be used if you are generating an ebook in PDF or any other supported format. For instance, if the main ebook file is "ebook.adoc", just inform "ebook" here.'
-    default: 'README'
-    required: false
-  slides_build:
-    description: 'Defines if a slides.html file should be built using AsciiDoc Reveal.js. The slides.html file is generated inside the gh-pages branch.'
-    default: 'false'
-    required: false
-  slides_main_adoc_file:
-    description: 'Defines the name of the main AsciiDoc file that will be used if you are generating slides with Reveal.js. For instance, if the slides file is "slides.adoc", just inform "slides" here.'
     default: 'README'
     required: false
   slides_skip_asciidoctor_build:
@@ -53,9 +45,6 @@ runs:
     - ${{ inputs.source_dir }}
     - ${{ inputs.asciidoctor_params }}
     - ${{ inputs.adoc_file_ext }}
-    - ${{ inputs.slides_build }}
-    - ${{ inputs.slides_main_adoc_file }}
-    - ${{ inputs.slides_skip_asciidoctor_build }}
     - ${{ inputs.pdf_build }}
     - ${{ inputs.ebook_main_adoc_file }}
     - ${{ inputs.pre_build }}

@@ -1,3 +1,7 @@
+:toc: left
+:imagesdir: ./docs/images
+:source-highlighter: highlight.js
+
 :icons: font
 :numbered:
 :title: TechDoc GitHub Action
@@ -5,6 +9,16 @@
 = TechDoc GitHub Action
 
 == Development Workflows
+
+
+=== Local Run
+
+[source,bash]
+----
+./local-run.sh
+
+----
+
 
 === Local Testing With Act
 https://github.com/nektos/act
