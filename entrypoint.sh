@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "START ACTION"
+
 # Exit if a command fails
 set -e
 
@@ -126,4 +128,4 @@ if false
     git push -f --set-upstream origin gh-pages
 fi
 
-echo "FINISH"
+echo "ACTION FINISHED"
