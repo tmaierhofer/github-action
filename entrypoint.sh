@@ -21,10 +21,9 @@ export
 
 echo 
 echo "Create HTML from ASCIIDOC Files"
-mv "$INPUT_SOURCE_DIR" /build
+cp "$INPUT_SOURCE_DIR" /build -r
 cd /build
 
-sleep infinity
 
 # Converting AsciiDoc files to HTML
 find . -name "*$INPUT_ADOC_FILE_EXT" | xargs asciidoctor -b html $GENERAL_ASCIIDOCTOR_PARAMS $INPUT_ASCIIDOCTOR_PARAMS
@@ -34,15 +33,13 @@ for FILE in `find . -name "README.html"`; do
     ln -s "README.html" "`dirname $FILE`/index.html"; 
 done
 
-rm -rd "*$INPUT_ADOC_FILE_EXT"
+rm -r *$INPUT_ADOC_FILE_EXT
 
 # find . -name "*$INPUT_ADOC_FILE_EXT" | xargs git rm -f --cached
 
 
-
-
 ###########################################################
-sleep infinity
+# sleep infinity
 
 exit 1
 
