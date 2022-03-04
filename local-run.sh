@@ -1,21 +1,23 @@
 #!/bin/bash
 
-# Remove previous containers
+echo "Remove previous containers and images if any"
 docker rm tech-doc-action --force | true
 docker rmi docker.io/maierhofer-consulting/tech-doc-action --force | true
 
 # Exit if a command fails
 set -e
 
-# Build Docker Image
+echo "Build Docker Image"
 
 docker build -t docker.io/maierhofer-consulting/tech-doc-action .
 
-#Run Docker Image
-docker run --name tech-doc-action docker.io/maierhofer-consulting/tech-doc-action:latest \
+echo "Run Docker Image"
+docker run --name tech-doc-action \
+--rm=false \
+--workdir "/github/workspace" \
+-v "${LOCAL_WORKSPACE_FOLDER}":"/github/workspace" \
 -v "/var/run/docker.sock":"/var/run/docker.sock" \
-
-
+docker.io/maierhofer-consulting/tech-doc-action:latest
 
 
 

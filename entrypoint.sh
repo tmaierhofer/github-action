@@ -6,12 +6,22 @@ echo "START ACTION"
 echo "Work Directory:"
 pwd
 
+echo
 echo "Work Directory Content:"
 ls -la
 
-exit 1
+echo
+echo "Root Directory Content:"
+ls / -la
+
+echo
+echo "Environment:"
+export
 
 # sleep infinity
+
+exit 1
+
 
 # Exit if a command fails
 set -e
