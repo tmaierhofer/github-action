@@ -2,6 +2,17 @@
 
 echo "START ACTION"
 
+
+echo "Work Directory:"
+pwd
+
+echo "Work Directory Content:"
+ls -la
+
+exit 1
+
+# sleep infinity
+
 # Exit if a command fails
 set -e
 
