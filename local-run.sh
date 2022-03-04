@@ -7,16 +7,34 @@ docker rmi docker.io/maierhofer-consulting/tech-doc-action --force | true
 # Exit if a command fails
 set -e
 
+echo
 echo "Build Docker Image"
-
 docker build -t docker.io/maierhofer-consulting/tech-doc-action .
 
+echo
+echo "Prepare Environment"
+
+export INPUT_ASCIIDOCTOR_PARAMS
+export INPUT_PDF_BUILD
+export INPUT_SOURCE_DIR="./docs"
+export INPUT_ADOC_FILE_EXT=".adoc"
+export INPUT_EBOOK_MAIN_ADOC_FILE
+export INPUT_SLIDES_BUILD
+export INPUT_SLIDES_MAIN_ADOC_FILE
+export INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD
+export INPUT_PRE_BUILD 
+export INPUT_POST_BUILD
+
+
+echo
 echo "Run Docker Image"
 docker run --name tech-doc-action \
 --rm=false \
 --workdir "/github/workspace" \
 -v "${LOCAL_WORKSPACE_FOLDER}":"/github/workspace" \
 -v "/var/run/docker.sock":"/var/run/docker.sock" \
+-e INPUT_ASCIIDOCTOR_PARAMS -e INPUT_PDF_BUILD -e INPUT_SOURCE_DIR -e INPUT_ADOC_FILE_EXT -e INPUT_EBOOK_MAIN_ADOC_FILE \
+-e INPUT_SLIDES_BUILD -e INPUT_SLIDES_MAIN_ADOC_FILE -e INPUT_SLIDES_SKIP_ASCIIDOCTOR_BUILD -e INPUT_PRE_BUILD -e INPUT_POST_BUILD \
 docker.io/maierhofer-consulting/tech-doc-action:latest
 
 

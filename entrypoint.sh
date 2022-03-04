@@ -18,13 +18,41 @@ echo
 echo "Environment:"
 export
 
-# sleep infinity
+
+echo 
+echo "Create HTML from ASCIIDOC Files"
+mv "$INPUT_SOURCE_DIR" /build
+cd /build
+
+sleep infinity
+
+# Converting AsciiDoc files to HTML
+find . -name "*$INPUT_ADOC_FILE_EXT" | xargs asciidoctor -b html $GENERAL_ASCIIDOCTOR_PARAMS $INPUT_ASCIIDOCTOR_PARAMS
+
+# Renaming README.html to index.html 
+for FILE in `find . -name "README.html"`; do 
+    ln -s "README.html" "`dirname $FILE`/index.html"; 
+done
+
+rm -rd "*$INPUT_ADOC_FILE_EXT"
+
+# find . -name "*$INPUT_ADOC_FILE_EXT" | xargs git rm -f --cached
+
+
+
+
+###########################################################
+sleep infinity
 
 exit 1
 
 
 # Exit if a command fails
 set -e
+
+
+
+
 
 OWNER="$(echo $GITHUB_REPOSITORY| cut -d'/' -f 1)"
 
@@ -34,8 +62,8 @@ fi
 
 # Steps represent a sequence of tasks that will be executed as part of the job
 echo "Configure git"
-apk add git -q > /dev/null
-apk add openssh-client -q > /dev/null
+apk add git -q
+apk add openssh-client -q
 
 git config --local user.email "action@github.com"
 git config --local user.name "GitHub Action"
